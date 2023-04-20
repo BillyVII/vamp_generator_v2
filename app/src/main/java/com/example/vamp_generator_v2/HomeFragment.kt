@@ -1,11 +1,13 @@
 package com.example.vamp_generator_v2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.vamp_generator_v2.data.Vamp
 import com.example.vamp_generator_v2.databinding.FragmentHomeBinding
 
@@ -50,7 +52,9 @@ class HomeFragment : Fragment() {
         // set up clicklistener
         binding.saveButton.setOnClickListener {
             Log.d("BUTTON", "click on button")
-            setupVamp()
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
+            view.findNavController().navigate(action)
+           // setupVamp()
         }
     }
 
@@ -76,7 +80,7 @@ class HomeFragment : Fragment() {
 
     // TODO ici les fonctions
 
-    fun setupVamp(){
+    private fun setupVamp(){
 
     }
 }
