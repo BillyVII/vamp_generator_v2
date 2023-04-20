@@ -1,10 +1,13 @@
 package com.example.vamp_generator_v2
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.vamp_generator_v2.data.Vamp
+import com.example.vamp_generator_v2.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,21 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+// TODO: Debut du code ici
+    private lateinit var binding: FragmentHomeBinding
+    private var conceptList: List<String> = listOf(
+        "Artiste",
+        "Clerc",
+        "Criminel",
+        "Enfant",
+        "Intellectuel",
+        "Investigateur",
+        "Marginal",
+        "Politicien",
+        "Soldat",
+        "Travailleur",
+        "Vagabond"
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,7 +52,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // set up clicklistener
+        binding.saveButton.setOnClickListener {
+            Log.d("BUTTON", "click on button")
+            setupVamp()
+        }
     }
 
     companion object {
@@ -55,5 +84,11 @@ class HomeFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    // TODO ici les fonctions
+
+    fun setupVamp(){
+
     }
 }
