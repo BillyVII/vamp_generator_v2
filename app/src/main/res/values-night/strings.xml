@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nom">Nom</string>
+    <string name="race">Race</string>
+    <string name="nature">Nature</string>
+    <string name="concept">Concept</string>
+    <string name="sire">Sire</string>
+    <string name="add">ADD</string>
+</resources>
