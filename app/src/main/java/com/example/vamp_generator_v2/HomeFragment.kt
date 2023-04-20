@@ -26,19 +26,7 @@ class HomeFragment : Fragment() {
 
 // TODO: Debut du code ici
     private lateinit var binding: FragmentHomeBinding
-    private var conceptList: List<String> = listOf(
-        "Artiste",
-        "Clerc",
-        "Criminel",
-        "Enfant",
-        "Intellectuel",
-        "Investigateur",
-        "Marginal",
-        "Politicien",
-        "Soldat",
-        "Travailleur",
-        "Vagabond"
-    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
